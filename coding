@@ -1,0 +1,12 @@
+   let myfile=document.getElementById("myfile");
+    let showvideo=document.getElementById("showvideo");
+    myfile.addEventListener('change',function(){
+const fileshow=this.files[0];
+
+
+   const file=URL.createObjectURL(fileshow);
+   showvideo.style.display="flex";
+   showvideo.src=file;
+
+
+    })
