@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <title> Function with return paramiter</title>
+        <link rel="icon" href="bike.jpeg">
+    </head>
+    <body>
+        <div style="margin-left: 33%; color: red;" ><h1>Function with return paramiter</h1></div>
+        <div style="background-color: palevioletred; width:500px;height:200px;margin-left: 30%; text-align: center;">
+        <p id="res" ><h3 style="color: yellow;">My Result</h3></p>
+        <p id="Return" ><h3 style="color: aqua;"> Return</h3></p>
+        <input type="text" id="myinput" style="background-color: white;width: 300px;height:20px" placeholder="first number"><p></p>
+         <input type="text" id="my2input" style="background-color: white; width: 300px;height:20px" placeholder="second number"><p></p>
+         <button style="background-color: aqua;" id="abc" style="color: red;" >Press</button>
+         </div>
+         <script>
+            document.getElementById("abc").addEventListener("click",()=>{
+                let firstvalue=document.getElementById("myinput").value;
+                let secondvalue=document.getElementById("my2input").value;
+              let a=  Mahi(firstvalue,secondvalue);
+ 
+             document.getElementById("res").innerHTML= "My Return result display here = "+a;
+
+
+                  });
+         
+            function Mahi( a , b ){
+                let res = parseInt(a) + parseInt(b);
+
+                return res;
+                
+            };
+                   </script>
+ <div style="margin-left: 20%;"><img src="img/convreter2.png" style="width: 800px; height: 400px; border-radius: 11px;"></div>
+    </body>
+</html>

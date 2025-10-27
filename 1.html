@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <div style="background-color: blueviolet;display: flex; align-items: center; justify-content: center; margin: 4%; padding: 3%;  border-radius: 10px;">   
+   <input type="file" id="myfile" style="background-color: tomato;"  accept="image/*" multiple>
+</div>
+ <div  style="background-color: red;" id="myimages">
+  </div> 
+<script>
+        const myInput=document.getElementById("myfile");
+        const mydivImages =document.getElementById("myimages");
+        myInput.addEventListener('change',function(){
+            const myArray = myInput.files;
+           for(let i=0;i<myArray.length;i++){
+                const mysingleImage=document.createElement("img");
+               const myimgUrl= URL.createObjectURL(myArray[i]);
+                mysingleImage.width=100;
+                mysingleImage.height=100;
+                mysingleImage.style.padding="10px";
+                mysingleImage.src= myimgUrl;
+
+                mydivImages.appendChild(mysingleImage);
+             }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <p id="question"></p>
+  <p id="op1"></p>
+    <p id="op2"></p>
+      <p id="op3"></p>
+        <p id="op4"></p>
+
+        <button id="confrm"> Confrim</button>
+        <p id="result"></p>
+
+  <script>
+    
+   class Quiz{
+constructor (ModelQuestion,option1,option2,option3,option4,answer){
+
+
+    this.ModelQuestion=ModelQuestion;
+    this.option1=option1;
+        this.option2=option2;
+    this.option3=option3;
+    this.option4=option4;
+    this.answer=answer;
+
+}
+
+   }
+
+      
+     let userSelection;
+    let Question=document.getElementById("question");
+    let op1Para=document.getElementById("op1");
+        let op2Para=document.getElementById("op2");
+            let op3Para=document.getElementById("op3");
+    let op4Para=document.getElementById("op4");
+   const conformBtn=document.getElementById("confrm");
+
+    let resultPara= document.getElementById("result");
+
+
+
+    conformBtn.addEventListener("click",function(){
+
+        if(myQuestionsArray[2].answer==userSelection){
+
+      resultPara.innerHTML="Your Answer is Correct";
+
+        }
+        else{
+      resultPara.innerHTML="This answer is wrong";
+
+
+        }
+
+
+
+    })
+
+  const myQuestionsArray=[new Quiz("what is Html?","a web page","a program","styling sheet","MarkupLanguage","MarkupLanguage"),
+ new Quiz("what is Css?","a Styling page","Nothing","stylingsheet","MarkupLanguage","stylingsheet"),
+new Quiz("what is JavaScript?","a Styling page","ProgramLanguage","stylingsheet","MarkupLanguage","ProgramLanguage"),  
+]
+
+   
+
+    Question.innerHTML=myQuestionsArray[2].ModelQuestion;
+    op1Para.innerHTML=myQuestionsArray[2].option1;
+    op2Para.innerHTML=myQuestionsArray[2].option2;
+    op3Para.innerHTML=myQuestionsArray[2].option3;
+    op4Para.innerHTML=myQuestionsArray[2].option4;
+
+
+   op1Para.addEventListener("click",function(){
+
+    userSelection=myQuestionsArray[2].option1;
+
+          resultPara.innerHTML= userSelection;
+
+
+   })
+   
+   op2Para.addEventListener("click",function(){
+    userSelection=myQuestionsArray[2].option2;
+
+          resultPara.innerHTML= userSelection;
+
+    
+   })
+   
+   op3Para.addEventListener("click",function(){
+
+    userSelection=myQuestionsArray[2].option3;
+
+          resultPara.innerHTML= userSelection;
+
+
+   })
+   
+   op4Para.addEventListener("click",function(){
+    userSelection=myQuestionsArray[2].option4;
+
+          resultPara.innerHTML= userSelection;
+
+    
+   })
+
+
+  </script>
+
+
+</body>
+</html>

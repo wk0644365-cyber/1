@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="img/converter1.png">
+</head>
+<body>
+    <div id="myDiv" style=" justify-items: center;">
+<p>My Students Table</p>
+<table border="1" id="mytbMain" style="text-align: center;">
+<tr>
+    <th>Name</th>
+    <th>Roll no</th>
+    <th>Image</th>
+    <th>Paper</th>
+</tr>
+</table>
+<table border="1" id="mytbMain2" style="text-align: center;">
+<tr>
+    <th>Name</th>
+    <th>Roll no</th>
+    <th>Image</th>
+    <th>Link</th>
+</tr>
+</table>
+</div>
+<script>
+class Students
+{
+    constructor(name,roll,img,paper){
+this.name=name;
+this.roll=roll;
+this.img=img;
+this.Ab=paper;
+   }
+}
+class Muhammad
+{
+    constructor(name,roll,img,link,linkName){
+this.Mname=name;
+this.Mroll=roll;
+this.Mimg=img;
+this.Mlink=link;
+this.myLinkName=linkName;
+    }
+}
+const myWebArray=[new Students("Ab","1","img/Email.png","Email"),
+                  new Students("Ih","2","img/face.png","FaceBook"),
+                  new Students("MU","3","img/tiktok.png","Tiktok")
+]
+const MuhammadArray=[  new Muhammad("Ri","4","img/useer.png","https://jtechsols.com","jtech"),
+                  new Muhammad("Wa","5","img/google.png","https://google.com","google")]
+const myTable= document.getElementById("mytbMain");
+const myTableMuhammad= document.getElementById("mytbMain2");
+const myDiv=document.getElementById("myDiv");
+for(let i=0;i<myWebArray.length;i++){
+const myTr=document.createElement("tr");
+const myNameTD= document.createElement("td");
+myNameTD.innerHTML=myWebArray[i].name;
+myTr.appendChild(myNameTD);
+const myRollTd=document.createElement("td");
+myRollTd.innerHTML=myWebArray[i].roll;
+myTr.appendChild(myRollTd);
+const myImgTd=document.createElement("td");
+     const myImg=document.createElement("img");
+     myImg.src=myWebArray[i].img;
+     myImg.width=20;
+     myImg.height=20;
+myImgTd.appendChild(myImg);
+myTr.appendChild(myImgTd);
+const myPaperTd= document.createElement("td");
+myPaperTd.innerHTML=myWebArray[i].Ab;
+myTr.appendChild(myPaperTd);
+myTable.appendChild(myTr);
+}
+for(let b =0;b<MuhammadArray.length;b++){
+  const myTr=document.createElement("tr");
+   const myNameTD= document.createElement("td");
+    myNameTD.innerHTML=MuhammadArray[b].Mname;
+    myTr.appendChild(myNameTD);
+    const myRollTd=document.createElement("td");
+    myRollTd.innerHTML=MuhammadArray[b].Mroll;
+    myTr.appendChild(myRollTd);
+    const myImgTd=document.createElement("td");
+     const myImg=document.createElement("img");
+     myImg.src=MuhammadArray[b].Mimg;
+     myImg.width=20;
+     myImg.height=20;
+     myImgTd.appendChild(myImg);
+      myTr.appendChild(myImgTd);
+   const myLinkTd= document.createElement("td");
+    const myA=document.createElement("a");
+    myA.href=MuhammadArray[b].Mlink;
+    myA.innerHTML=MuhammadArray[b].myLinkName;
+     myLinkTd.appendChild(myA);
+          myTr.appendChild(myLinkTd);
+     myTableMuhammad.appendChild(myTr);
+}
+myDiv.appendChild(myTable);
+const myP=document.createElement("p");
+myP.innerHTML="Students Part 2";
+myDiv.appendChild(myP);
+myDiv.appendChild(myTableMuhammad);
+</script>
+</body>
+</html>

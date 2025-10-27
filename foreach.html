@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="abc">
+
+
+</div>
+
+
+<script>
+
+const Students=["Yaseen","Ab","Muhammad","Ihtesham"]
+
+const div=document.getElementById("abc");
+
+
+for(let i=0;i<3;i++)
+{
+ const paragraph=document.createElement("p");
+
+paragraph.innerHTML= Students[i] +"  index is " + i;
+
+
+div.appendChild(paragraph);
+
+
+}
+Students.forEach(function(rifaqat,i){
+
+const paragraph=document.createElement("p");
+
+paragraph.innerHTML= rifaqat + " index " + i;
+
+
+div.appendChild(paragraph);
+
+});
+
+
+</script>
+
+    
+</body>
+</html>

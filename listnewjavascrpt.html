@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+
+<head>
+
+
+
+</head>
+
+
+<body>
+
+<div id="mydiv">
+</div>
+<caption>Students</caption>
+<ul id="ih">
+</ul>
+<table id="tb">
+</table>
+<script>
+class students{
+constructor (name , rollno,img){
+this.name=name;
+this.rollno=rollno;
+this.img=img;
+}
+getStudents(){
+return "i am " + this.name + " and my roll no is " + this.rollno;
+}
+}
+const myWeb= [
+    new students("Ab","1"),
+    new students("Ihtesham","2"),
+    new students("Muhammad","3"),
+    new students("RifaQAT","4"),
+    new students("waleed","5")
+]
+const myOrderList=document.getElementById("ih");
+const myDiv=document.getElementById("mydiv");
+const myTable = document.getElementById("tb");
+
+const myP=document.createElement("p");
+
+myP.innerHTML="My Result";
+
+myDiv.appendChild(myP);
+for(let i=0;i<5;i++ ){
+const myListLi= document.createElement("li");
+myListLi.innerHTML=myWeb[i].getStudents();
+myOrderList.appendChild(myListLi);
+}
+</script>
+
+</body>
+
+
+</html>

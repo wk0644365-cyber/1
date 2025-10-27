@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="showQuestions"></p>
+<select id="selection">
+ <option id="op1"> </option>
+  <option id="op2"> </option>
+ <option id="op3"> </option>
+ <option id="op4"> </option>
+
+
+
+
+</select>
+
+
+
+<button id="conform"> Confrim</button>
+
+
+    <p id="answer"></p>
+
+    <br>
+    <button id="nextQ">next Question</button>
+
+    <br>
+    <br>
+    
+<button id="finalR">My Quiz Result</button>
+
+<p id="result"></p>
+
+
+<script>
+
+class Quiz{
+constructor(qusetion,op1,op2,op3,op4,answer){
+
+this.qusetion=qusetion;
+this.op1=op1;
+this.op2=op2;
+this.op3=op3;
+this.op4=op4;
+this.answer=answer;
+
+
+}
+
+}
+const myquizArray=[new Quiz("what is html stand for?","hyperLink","HiperTextMarkupLang","styleSheet","none of this","HiperTextMarkupLang"),
+    new Quiz("whis is Css?","Ab","Ih","RF","StyleSheet","StyleSheet")
+];
+let userAnswer;
+let index=0;
+let correctAns=0;
+let wrongAnswer=0;
+
+let myQuestion=document.getElementById("showQuestions").innerHTML=myquizArray[index].qusetion;
+
+let op1=document.getElementById("op1").innerHTML=myquizArray[index].op1;
+let op2=document.getElementById("op2").innerHTML=myquizArray[index].op2;
+let op3=document.getElementById("op3").innerHTML=myquizArray[index].op3;
+let op4=document.getElementById("op4").innerHTML=myquizArray[index].op4;
+
+
+document.getElementById("selection").addEventListener("change", function() {
+   
+   userAnswer=this.value;
+   
+
+  console.log(userAnswer);
+
+
+
+  });
+
+
+  document.getElementById("conform").addEventListener('click', function() {
+   
+if(myquizArray[index].answer==userAnswer){
+
+
+  document.getElementById("answer").innerHTML="your answer is correct";
+  correctAns++;
+
+ }
+ else{
+      document.getElementById("answer").innerHTML="your answer is wrong"
+      wrongAnswer++;
+
+ }
+
+});
+
+document.getElementById("nextQ").addEventListener('click',function(){
+
+ index++;
+
+  let myQuestion=document.getElementById("showQuestions").innerHTML=myquizArray[index].qusetion;
+
+let op1=document.getElementById("op1").innerHTML=myquizArray[index].op1;
+let op2=document.getElementById("op2").innerHTML=myquizArray[index].op2;
+let op3=document.getElementById("op3").innerHTML=myquizArray[index].op3;
+let op4=document.getElementById("op4").innerHTML=myquizArray[index].op4;
+
+
+})
+document.getElementById("finalR").addEventListener('click',function(){
+
+
+document.getElementById("result").innerHTML= "correct Answers is " + correctAns + " <br> wrong answers is "+ wrongAnswer;
+
+
+})
+
+
+</script>
+
+</body>
+</html>

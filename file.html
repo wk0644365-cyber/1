@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model class</title>
+  <link rel="icon" href="imgs/creativ.png">
+</head>
+<body>
+  <p id="res"> Result</p>
+<script>
+ 
+ class ourinfo{
+ constructor(name,fname){
+this.myname = name;
+this.myfname = fname;
+}
+getinfo(){
+  return this.myname+" - my dad is "+ this.myfname + "<br>";
+}}
+const Parson1=new ourinfo("Refaqat","Liakat");
+
+const Parson2=new ourinfo("Mahi","Obroi");
+document.getElementById("res").innerHTML= Parson1.getinfo() + Parson2.getinfo();
+
+
+
+
+
+</script>
+</body>
+</html>

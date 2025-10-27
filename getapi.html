@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        din{
+            font-family: cursive;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="show" style="display: flex;"> </div>
+    <script>
+        const pdiv=document.getElementById("show");
+        async function getData(){
+            const basit= await fetch("getapi.php");
+            const json=await basit.json();
+            for(let i=0;i<json.length;i++){
+                let div=document.createElement("div");
+                div.style.display="flex";
+                div.style.width="50%"
+                div.style.marginTop="22%"
+                 div.style.marginLeft="-28%"
+                 div.style.padding="10px"
+                div.style.flexDirection="colmun";
+                
+
+             for(j=0;j<1;j++){
+                  let img=document.createElement("img");
+                img.width=300;
+                img.height=230;
+                img.src=json[i].img_url;
+                pdiv.appendChild(img);
+              
+
+                let avitar=document.createElement("img");
+                avitar.width=30;
+                avitar.height=30;
+                avitar.style.marginLeft="1%"
+                avitar.style.marginTop="-2.6%"
+                avitar.style.borderRadius="0 10px 0 10px"
+                avitar.src=json[i].avitar_url;
+
+                    let name=document.createElement("p");
+                    name.style.marginLeft="0.3%";
+                    name.style.marginTop="-1%";
+                    name.style.fontSize="0.9em";
+                    name.style.fontFamily="cursive"
+                name.innerHTML=json[i].name;
+
+                 let hearturl=document.createElement("img");
+                hearturl.width=20;
+                hearturl.height=20;
+                hearturl.style.marginTop="-1%";
+                hearturl.style.marginLeft="6%";
+                hearturl.src=json[i].heart_url;
+
+                   let heart=document.createElement("p");
+                   heart.style.marginTop="-0.8%"
+                   heart.style.marginLeft="0.5%"
+                heart.innerHTML=json[i].heart;
+
+                 let eyeurl=document.createElement("img");
+                eyeurl.width=30;
+                eyeurl.height=30;
+                eyeurl.style.marginTop="-1.8%"
+                eyeurl.style.marginLeft="1%"
+                
+                eyeurl.src=json[i].eye_url;
+
+                   let eye=document.createElement("p");
+                   eye.style.marginLeft="0.3%";
+                   eye.style.marginTop="-0.8%"
+                eye.innerHTML=json[i].eye;
+
+                //div.appendChild(img);
+                div.appendChild(avitar);
+                div.appendChild(name);
+                div.appendChild(hearturl);
+                div.appendChild(heart);
+                div.appendChild(eyeurl);
+                div.appendChild(eye);
+                }
+                pdiv.appendChild(div);
+            }
+        }
+        getData();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+<title> Function next paramiter</title>
+<link rel="icon" href="img/convreter2.png">
+    </head>
+    <body>
+<p id="abc">My Result</p>
+<input type="text" id="myinput" placeholder="  first number"><br><br>
+<input type="text" id="my2input" placeholder=" second number"><br><br>
+<button id="ab" > Add me</button>
+<script>
+document.getElementById("ab").addEventListener("click" , ()=>{
+    let firstvalue=document.getElementById("myinput").value;
+    let secondvalue=document.getElementById("my2input").value;
+    Muhammad(firstvalue,secondvalue);
+});
+
+function Muhammad( c , d){
+
+let res = parseInt(c) - parseInt(d);
+document.getElementById("abc").innerHTML= " My result is display here " -res;
+}
+
+</script>
+    </body>
+</html>

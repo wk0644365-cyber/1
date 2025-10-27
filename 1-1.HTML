@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-image: url(transfer10..png);background-size: cover; color: white;">
+    <div  style="background-color: rgb(127, 182, 219);display: flex; align-items: center; justify-content: center; margin: 4%; padding: 3%;  border-radius: 10px;">
+    <input type="file" id="myfiles" accept="video/*" multiple>
+    </div>
+    <div id="myvideo"  ></div>
+    
+    <script>
+  const myInput=document.getElementById("myfiles");
+  const myvideos=document.getElementById("myvideo");
+  myInput.addEventListener('change',function(){
+
+    const myArray = myInput.files;
+    for(let i=0;i<myArray.length;i++){
+        const mysinglevideo=document.createElement("video");
+        const myvideoUrl=URL.createObjectURL(myArray[i]);
+        mysinglevideo.controls=true;
+        mysinglevideo.src=myvideoUrl;
+        mysinglevideo.width=200;
+        mysinglevideo.height=200;
+        mysinglevideo.style.padding="10px";
+        myvideos.appendChild(mysinglevideo);
+    }
+  })
+    </script>
+    
+</body>
+</html>

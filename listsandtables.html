@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+        } 
+         </style>
+
+    </head>
+   
+  <body id="bd">
+    
+<div id="di" style="justify-items: center;">
+  <table  border="1" id="tb" style="text-align: center;">
+    <tr>
+      <th>name</th>
+      <th>fname</th>
+      <th>Roll</th>
+      <th>img</th>
+      <th>link</th>
+      <th>linkname</th>
+    </tr>
+  </table>
+
+<a href="Html pres.html">
+<button style="margin-left: 75%; border-radius: 20px;">next</button>
+</a>
+</div>
+<script>
+class Students{
+    constructor(name,fname,Roll,img,link,linkname){
+    this.name=name;
+    this.fname=fname;
+    this.Roll=Roll;
+    this.img=img;
+    this.link=link;
+    this.linkname=linkname;
+}
+}
+
+const marry=[ new Students("Ab","Khan","1","img/Email.png", "https://jtechsols.com","Email"),
+              new Students("Ih","Khan","2","img/youtub.png", "https://jtechsols.com","youtube"),
+              new Students("Md","Khan","3","img/Google.png", "https://jtechsols.com","Google"),
+              new Students("Re","Khan","4","img/face.png", "https://jtechsols.com","face"),
+              new Students("Wd","Khan","5","img/tiktok.png", "https://jtechsols.com","5.avif"),
+              new Students("Su","Khan","6","img/lock.png", "https://jtechsols.com","lock")
+]
+const myDiv=document.getElementById("di");
+const mytable=document.createElement("tb");
+
+mybody.appendChild(myDiv);
+for(let i=0;i<marry.length;i++){
+    const myTr=document.createElement("tr");
+    const myNameTD=document.createElement("td");
+    myNameTD.innerHTML=marry[i].name;
+    myTr.appendChild(myNameTD);
+   
+   
+
+    const fname=document.createElement("td")
+    fname.innerHTML=marry[i].fname;
+    myTr.appendChild(fname);
+    
+    const mroll=document.createElement("td");
+    mroll.innerHTML=marry[i].Roll;
+    myTr.appendChild(mroll);
+
+    const myImgTd=document.createElement("td");
+    const myImg=document.createElement("img");
+    myImg.src=marry[i].img;
+   myImg.width=20;
+     myImg.height=20;
+    myImgTd.appendChild(myImg);
+    myTr.appendChild(myImgTd);
+
+    const myLinkTd=document.createElement("td");
+    const myA=document.createElement("a");
+    myA.href=marry[i].link;
+    myA.innerHTML=marry[i].linkname;
+    myLinkTd.appendChild(myA);
+    myTr.appendChild(myLinkTd);
+    mytable.appendChild(myTr);
+    }
+
+
+
+
+
+
+
+</script>
+
+  </body>
+</html>

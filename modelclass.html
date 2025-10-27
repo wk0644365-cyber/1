@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="res">Result</p>
+        <p id="res2">Result2</p>
+
+    <button id="btn">click me</button>
+
+<script>
+
+class Rifaqat{
+    
+constructor(name,rollno,paper){
+
+this.name=name;
+this.rollno=rollno;
+this.paper=paper;
+
+}
+
+getInfo(){
+
+return "my name is " + this.name + " My roll no is "+ this.rollno+" my paper is "+this.paper;
+
+}
+
+
+}
+
+
+const stu = [
+new Rifaqat("Ab","1","web"),
+new Rifaqat("yaseen","2","Android"),
+]
+
+
+document.getElementById("btn").onclick=()=>{
+
+
+document.getElementById("res").innerHTML=new Rifaqat("waleed","20","design").getInfo();
+document.getElementById("res2").innerHTML= stu[0].getInfo()+" <br> "+stu[1].getInfo();
+
+
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nameinp" placeholder="enter name" type="text">
+        <input id="imginp" placeholder="enter img url" type="text">
+   <button id="sendD"> send data</button>
+    
+<script>
+ let NameINP=document.getElementById("nameinp");
+  let IMgINP=document.getElementById("imginp");
+
+   let btnSend=document.getElementById("sendD");
+
+
+    btnSend.addEventListener("click", function(){
+
+       const dribleArray={
+        Dname: NameINP.value,
+        Dimg_url: IMgINP.value
+
+       }
+
+ console.log(dribleArray);
+      fetch("sendapi.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // <-- headers should be an object
+    },
+    body: JSON.stringify(dribleArray),
+  })
+
+ 
+
+    })
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <input type="file"  id="myfile" >
+    <video id="showvideo" width="200px" height="200px" controls>
+
+
+<script>
+    let myfile=document.getElementById("myfile");
+    let showvideo=document.getElementById("showvideo");
+    myfile.addEventListener('change',function(){
+const fileshow=this.files[0];
+
+
+   const file=URL.createObjectURL(fileshow);
+   showvideo.style.display="flex";
+   showvideo.src=file;
+
+
+    })
+    </script>
+    
+</body>
+</html>

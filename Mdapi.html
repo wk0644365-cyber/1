@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mddiv">
+    </div>
+    <script>
+        let pdiv=document.getElementById("mddiv");
+
+        async function getData(){
+            const responseFromServer=await fetch("Mdapi.php");
+            const myjsonData= await responseFromServer.json();
+           for(let i=0;i<myjsonData.length;i++){
+
+           
+let myname= document.createElement("p");
+       myname.innerHTML=myjsonData[i].name;
+
+ let myimg= document.createElement("img");
+ myimg.width=200;
+ myimg.height=200;
+       myimg.src=myjsonData[i].img_url;
+
+        let myimgAvitar= document.createElement("img");
+        myimgAvitar.width=40;
+        myimgAvitar.height=40;
+         myimgAvitar.src=myjsonData[i].avitar_url;
+
+
+ let myadress= document.createElement("p");
+       myadress.innerHTML=myjsonData[i].heart;
+        let eyes= document.createElement("p");
+       eyes.innerHTML=myjsonData[i].eye;
+
+         pdiv.appendChild(myname); 
+         pdiv.appendChild(myadress);
+
+          pdiv.appendChild(myimg);  
+                    pdiv.appendChild(myimgAvitar);  
+
+                              pdiv.appendChild(eyes);  
+
+
+
+           }
+
+        }
+        getData();
+    </script>
+</body>
+</html>

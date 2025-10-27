@@ -1,0 +1,37 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <p id="res">Result here</p>
+       <input type="no" id="input" placeholder="enter age">
+       <button id="btn">show</button>
+       <script>
+        
+        document.getElementById("btn").onclick=()=>{
+            let data= document.getElementById("input").value;
+      
+      if(data>=18){
+       
+
+        document.getElementById("res").innerHTML="you are older";
+
+
+}
+else{
+    document.getElementById("res").innerHTML="your are minor";
+
+}
+
+        }
+        let a=23;
+        
+        console.log(a/=2)
+
+       </script>
+
+</body>
+</html>

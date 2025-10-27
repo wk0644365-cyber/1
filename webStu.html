@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="students" style="display: flex;"></div>
+   
+   <script>
+   let myD=document.getElementById("students");
+
+   async function getData(){
+    
+ const responseFromServer = await fetch("studentapi.php");
+
+ const myjsonData = await responseFromServer.json();
+   let i=0;
+    while(i<myjsonData.length)
+    {
+   let mysingleDiv= document.createElement("div");
+         mysingleDiv.style.display='flex';
+         mysingleDiv.style.flexDirection='column';
+
+         for(let j=0;j<1;j++){
+let myname= document.createElement("p");
+       myname.innerHTML=myjsonData[i].student_Name;
+
+ let myimg= document.createElement("img");
+ myimg.width=200;
+ myimg.height=200;
+       myimg.src=myjsonData[i].student_Image;
+
+ let myadress= document.createElement("p");
+       myadress.innerHTML=myjsonData[i].student_Address;
+
+         mysingleDiv.appendChild(myname); 
+                   mysingleDiv.appendChild(myadress);
+
+          mysingleDiv.appendChild(myimg);  
+
+         }
+
+    
+
+     myD.appendChild(mysingleDiv); 
+         
+
+    i++;
+    }
+
+
+
+   }
+   
+getData();
+   </script>
+
+</body>
+</html>

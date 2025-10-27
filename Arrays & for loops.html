@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> 
+    *{
+    background-color: palegreen
+    ; 
+    color:black
+    
+}
+    </style>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> Arrays & for loops</title>
+   <link rel="icon" href="img/parfum.png">
+</head>
+<body>
+<p id="res">My Result</p>
+
+<input type="text" id="names" placeholder="username"><br><br>
+<input type="email" id="emails" placeholder="emails"><br><br>
+<input type="password" id="password" placeholder="password"><br><br>
+<button id="abc">sub me</button>
+
+
+
+<script>
+
+document.getElementById("abc").onclick = () => {
+let names=["muhammad","Ihtesham","abdul basit","refaqat","yassen",]
+let emails=["muhammad@gmail.com","ihtesham@gmail.com","abdulbasit@gmail.com","refaqat@gmail.com","yassen@gmail.com"];
+let passward=["0928621200","0928621300","0928621400","0928621500","0928621600","0928621700"];
+
+
+let username=document.getElementById("names").value;
+let useremail=document.getElementById("emails").value;
+let userpassward=document.getElementById("passward").value;
+for(let i=0;i<5;i++)
+
+if  (username==(names[i])&& useremail==(emails[i])&& userpassward==(passward[i]))
+{
+
+document.getElementById("res").innerHTML= "your data is available in our databas "+username + useremail + userpassward;
+break;
+
+}
+else {
+
+document.getElementById("res").innerHTML= "your data is not abailable "+username + useremail + userpassward;
+
+}
+
+
+
+}
+</script>
+   
+</body>
+</html>

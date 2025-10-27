@@ -1,0 +1,76 @@
+<!Doctype html>
+
+<html>
+<head>
+    <style> 
+    *{
+    background-color: palegreen
+    ; 
+    color:black
+    
+}
+    </style>
+
+    <title>arithemic opreation</title>
+    <link rel="icon" href="img/hq img.jpg" type="image png">
+</head>
+<body>
+    <div style="margin-left: 40%;"><h1>Arithemic opreation</h1></div>
+<p id="my result"><h2>My Result Is Disply Here</h2><img src="user.png" alt=""></p>
+<input type="text" id="myinput" placeholder="my first number">
+<input type="text" id="my2input" placeholder="my second number"> 
+<button id="ab"> add me</button>  
+<button id="cd"> SUB me</button>
+<button id="ef"> Mul me</button>
+<button id="gh"> dvd me</button>
+<script>
+document.getElementById("ab").onclick =()  => {
+
+let num1=document.getElementById("myinput").value;
+let num2=document.getElementById("my2input").value;
+
+let result = parseInt(num1) + parseInt(num2); 
+
+result=document.getElementById("my result").src=" " +num1 + " + "+num2 + " =  "+ result;
+}
+
+document.getElementById("cd").onclick =()  => {
+
+let num1=document.getElementById("myinput").value;
+let num2=document.getElementById("my2input").value;
+
+let result = parseInt(num1) - parseInt(num2); 
+
+result=document.getElementById("my result").innerHTML="this is my result of " +num1 + " - "+num2 + " =  "+ result;
+}
+
+document.getElementById("ef").onclick =() => {
+
+    let num1=document.getElementById("myinput").value;
+    let num2=document.getElementById("my2input").value;
+
+    let result = parseInt(num1) * parseInt(num2);
+
+    result=document.getElementById("my result").innerHTML="this is my result " +num1 + " * "+num2 + " = "+ result;
+
+}
+
+document.getElementById("gh").onclick =() => {
+
+let num1=document.getElementById("myinput").value;
+let num2=document.getElementById("my2input").value;
+
+let result = parseInt(num1) / parseInt(num2);
+
+result=document.getElementById("my result").innerHTML="this is my result " +num1 + " / "+num2 + " = "+ result;
+
+}
+
+</script>
+<div><img src="img/hq img.jpg" style="width: 500; height: 300px;border: 5px solid whitesmoke; border-radius: 11px;"></div>
+
+</body>
+
+
+
+</html>
